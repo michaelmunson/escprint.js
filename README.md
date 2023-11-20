@@ -3,7 +3,7 @@
 A minimalist package for styling command line outputs
 
 ## Usage
-`prnt` function
+### `prnt` function
 - Use **&lt;style...&gt;** to add that style to the current output style
 - Use **&lt;/style...&gt;** to reset the output style and then set the style to whatever is in the tag
 - Use **&lt;/&gt;** to reset the output style
@@ -26,8 +26,46 @@ prnt(`
 prnt(`
     <red,underline> This is red and underlined
     </italic> This is just italic 
-`)
+`);
 ```
+The `prnt` function automatically resets the command line styles after it has been called. 
+
+### Importing Styles Directly
+If you don't feel like using the `prnt` function, you can import the styles directly and use them in a `console.log` or other functions;
+
+*Don't forget to reset the styles after using them*
+
+```js
+import {BLUE,UNDERLINE,X,YELLOW} from "escprint"; 
+
+// X means reset styles
+console.log(`
+    This is normal 
+    ${BLUE} This is blue
+    ${UNDERLINE} this is blue and underlined
+    ${X+YELLOW} this is just yellow
+    ${X}
+`);
+```
+or
+```js
+import readline from "readline";
+import {CYAN,X} from "escprint"; 
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const prompt = `${CYAN}What is your name? ${X}`; 
+
+rl.question(prompt, (input) => {
+    rl.close();
+    resolve(input);
+});
+```
+
+
 
 ## Recognized Styles
 ### Text Decoration
