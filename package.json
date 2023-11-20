@@ -1,0 +1,25 @@
+{
+  "name": "escprint",
+  "version": "1.0.0",
+  "description": "A minimalist package for styling command line outputs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmunson/escprint.js.git"
+  },
+  "keywords": [
+    "command",
+    "line",
+    "styling"
+  ],
+  "author": "Michael Schilling Munson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelmunson/escprint.js/issues"
+  },
+  "homepage": "https://github.com/michaelmunson/escprint.js#readme"
+}
